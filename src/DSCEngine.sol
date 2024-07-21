@@ -366,4 +366,12 @@ contract DSCEngine is ReentrancyGuard {
     }
 
     function getHealthFactor() external view {}
+
+    function getAccountInformation(address user)
+        external
+        view
+        returns (uint256 totalDscMinted, uint256 collateralValueInUsd)
+    {
+        (totalDscMinted, collateralValueInUsd) = _getAccountInformation(user);
+    }
 }
